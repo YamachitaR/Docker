@@ -6,9 +6,6 @@ RUN apt-get update && \
     apt-get install -y nginx && \
     rm -rf /var/lib/apt/lists/*
 
-# Copie um arquivo de configuração personalizado, se necessário
-# COPY nginx.conf /etc/nginx/nginx.conf
-
 # Exponha a porta 80
 EXPOSE 80
 
