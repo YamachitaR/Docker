@@ -8,4 +8,4 @@ EXPOSE 3306
 
 #RUN sh -c mysql_secure_installation --set-password=my_password --remove-anonymous-users --remove-expired-passwords --remove-remote-root
 
-systemctl start mariadb
+CMD [systemctl start mariadb]
