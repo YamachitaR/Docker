@@ -1,0 +1,22 @@
+# wordpress/Dockerfile
+FROM debian:bullseye-slim
+
+# Instalação de dependências
+RUN apt-get update && \
+    apt-get install -y php-fpm php-mysqli && \
+    rm -rf /var/lib/apt/lists/*
+
+# Criar diretório para php-fpm.sock
+RUN mkdir -p /run/php
+
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Alias to php-fpm
+RUN ln -s $(find /usr/sbin/ -name 'php-fpm*') /usr/sbin/php-fpm
+
+# Expose port
+EXPOSE 9000
+
+# Run php-fpm
+CMD ["php-fpm", "-F"]
