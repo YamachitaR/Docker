@@ -1,11 +1,25 @@
-FROM debian:latest
+# Base da image
+FROM debian
 
-RUN apt-get update && apt-get install -y mariadb-server
+# Instalando mariadb-server
+RUN apt update -y && apt upgrade -y && apt install mariadb-server -y
 
-ENV MYSQL_ROOT_PASSWORD=my_password
+# Por padrão o MariaDB está vinculado ao localhost, não permite conexões remotas
+# Esta configuração permite conexões remotas de qualquer host (no nosso caso, outros containers)
+RUN echo "[mysqld] \n\
+skip-networking=0 \n\
+skip-bind-address" >> /etc/mysql/my.cnf
 
-EXPOSE 3306
+# Inicie o serviço mariadb e crie um banco de dados e usuário para wordpress
+RUN service mariadb start && \
+	mariadb -u root -e \
+	"CREATE DATABASE IF NOT EXISTS wordpress_db; \
+	CREATE USER 'wuser'@'%' identified by 'wpass'; \
+	GRANT ALL ON wordpress_db.* TO 'wuser'@'%' IDENTIFIED BY 'wpass'; \
+	FLUSH PRIVILEGES;" && \
+	service mariadb stop
 
-#RUN sh -c mysql_secure_installation --set-password=my_password --remove-anonymous-users --remove-expired-passwords --remove-remote-root
+# Start the mariadb service when the container is run
+CMD ["mysqld_safe"]
 
-CMD [systemctl start mariadb]
+# Fonte https://github.com/LucasKuhn/inception/blob/main/srcs/requirements/mariadb/Dockerfile

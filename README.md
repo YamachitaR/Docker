@@ -1,8 +1,16 @@
 # Docker
 Varios exemplos com Docker
 
+# Agradecimento 
 
 
+- [Bruno Bandeira](https://github.com/BrunodevBandeira) 
+- Diogo Barbosa 
+- Deus, universo, ser superior
+- [Jessica Fernanda](https://github.com/nandajfa) 
+- Letícia Becher
+- [Lucas Kuhn](https://github.com/LucasKuhn)
+- [Lucas Martins](https://github.com/APONTES19)
 
 
 # Bibliografia 
