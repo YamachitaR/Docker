@@ -58,9 +58,9 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/ryoshio-/data/mariadb
+      device: /home/${LOGIN}/data/mariadb
   wordpress:
     driver_opts:
       o: bind
       type: none
-      device: /home/ryoshio-/data/wordpress
+      device: /home/${LOGIN}/data/wordpress
