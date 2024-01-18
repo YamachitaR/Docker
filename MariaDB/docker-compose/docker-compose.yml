@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  mariadb:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: sua_senha
+    volumes:
+      - /caminho/para/seu/diretorio:/var/lib/mysql

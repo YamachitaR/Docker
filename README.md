@@ -11,9 +11,13 @@ Varios exemplos com Docker
 - Letícia Becher
 - [Lucas Kuhn](https://github.com/LucasKuhn)
 - [Lucas Martins](https://github.com/APONTES19)
+- [42SP](https://www.42sp.org.br/)
 
 
 # Bibliografia 
+
+- Algumas fonte esta no prórpio arquivo
+- Desculpa caso esqueça de vc!
 
 ## Video 
 
