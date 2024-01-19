@@ -6,8 +6,8 @@ RUN apt update -y && apt upgrade -y && \
 RUN mkdir -p /etc/nginx/ssl && \
         openssl req -batch -x509 -sha256 -nodes -newkey rsa:2048 -days 365 \
         -keyout /etc/nginx/ssl/inception.key \
-        -out /etc/nginx/ssl/inception.crt \
-        -subj "/C=BR/ST=SP/L=SP/O=42sp/CN=$DOMAIN_NAME/UID=ryoshio-"
+        -out /etc/nginx/ssl/inception.crt 
+#        -subj "/C=BR/ST=SP/L=SP/O=42sp/CN=$DOMAIN_NAME/UID=ryoshio-"
 
 COPY ./conf/nginx.conf /etc/nginx/conf.d
 

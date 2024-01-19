@@ -52,7 +52,8 @@ networks:
   inception:
     name: inception
     driver: bridge
-  
+
+
 volumes:
   mariadb:
     driver_opts:
@@ -64,3 +65,4 @@ volumes:
       o: bind
       type: none
       device: /home/${LOGIN}/data/wordpress
+
