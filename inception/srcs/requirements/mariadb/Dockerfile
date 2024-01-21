@@ -36,4 +36,3 @@ EXPOSE 3306
 
 # Definindo o ponto de entrada do contêiner como o script entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
-

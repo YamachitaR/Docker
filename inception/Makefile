@@ -3,10 +3,7 @@ LOGIN = ryoshio-
 PATH_COMPOSE = ./srcs/docker-compose.yml
 PATH_VOLUME	= /home/$(LOGIN)/data
 
-
 all: build
-
-
 
 build:
 	sudo mkdir -p $(PATH_VOLUME)/wordpress
@@ -26,13 +23,20 @@ start:
 stop:
 	docker-compose --file=$(PATH_COMPOSE) stop
 
-# pensar colocar ls
+ls:
+	docker ps
 
 clean: down
 
 fclean: clean
 	sudo rm -rf $(PATH_VOLUME)
+
+
+clean-before:
+	docker ps -a -q --filter "status=exited" | xargs -r docker rm
+	docker images -q -f "dangling=true" | xargs -r docker rmi
 	
+
 	
 re: fclean all
 

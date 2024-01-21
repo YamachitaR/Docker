@@ -8,14 +8,14 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
         
         mv wp-config-sample.php wp-config.php
 
-	sed -i "s/database_name_here/$WP_DATABASE/g" wp-config.php
+	sed -i "s/database_name_here/$MYSQL_DATABASE/g" wp-config.php
         sed -i "s/username_here/$WP_ADMIN_USER/g" wp-config.php
 	sed -i "s/password_here/$WP_ADMIN_PWD/g" wp-config.php
 	sed -i "s/localhost/$WP_HOST/g" wp-config.php
 
         wp core install --allow-root \
             --url=$DOMAIN_NAME \
-            --title=$TITLE \
+            --title="Inception" \
             --admin_user=$WP_ADMIN_USER \
             --admin_email=$WP_ADMIN_EMAIL \
             --admin_password=$WP_ADMIN_PWD \

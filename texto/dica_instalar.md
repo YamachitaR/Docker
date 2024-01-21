@@ -6,6 +6,7 @@ FROM ubuntu
 RUN apt-get upgrade
 RUN apt-get install vim --yes
 RUN apt-get install curl --yes
+
 ~~~ 
 
 O certo é 

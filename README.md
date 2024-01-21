@@ -7,6 +7,7 @@ Varios exemplos com Docker
 - [Bruno Bandeira](https://github.com/BrunodevBandeira) 
 - Diogo Barbosa 
 - Deus, universo, ser superior
+- [Emerson](https://github.com/D4rkSantana)
 - [Jessica Fernanda](https://github.com/nandajfa) 
 - Letícia Becher
 - [Lucas Kuhn](https://github.com/LucasKuhn)
